@@ -1,0 +1,14 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: base-turbine
+turbine:
+  app-config: testclient
+  cluster-name-expression: new String("default")
+  instanceUrlSuffix: /hystrix.stream
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+

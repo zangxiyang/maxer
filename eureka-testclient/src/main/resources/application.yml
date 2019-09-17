@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: testclient #在eureka-server中注册的名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    eureka-connection-idle-timeout-seconds: 20000
+    eureka-server-read-timeout-seconds: 20000
+server:
+  port: 8080
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000

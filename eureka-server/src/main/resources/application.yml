@@ -1,0 +1,24 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false #标识是否将本实例在Eureka Server中进行注册 , 默认为true
+    fetch-registry: false #标识是否从Eureka Server中取得本实例的注册信息,默认为true
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/ #表示从默认分区中访问Eureka Server
+  server:
+    enable-self-preservation: false #关闭自我保护机制
+spring:
+  application:
+    name: eureka-server #cApp名称,在Eureka注册名称
+  profiles:
+    active: localthost
+logging:
+  level:
+    com:
+      netflix:
+        eureka: info
+        discovery: info
